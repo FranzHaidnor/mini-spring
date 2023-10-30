@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 默认可列表 Bean 工厂
  * @author derekyi
  * @date 2020/11/22
  */

@@ -4,6 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 
 /**
+ * 具有 Autowire 功能的抽象 Bean 工厂
  * @author derekyi
  * @date 2020/11/22
  */
