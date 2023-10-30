@@ -2,6 +2,7 @@ package org.springframework.test.ioc;
 
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.CglibSubclassingInstantiationStrategy;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 /**
@@ -15,6 +16,9 @@ public class BeanDefinitionAndBeanDefinitionRegistryTest {
 		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 		BeanDefinition beanDefinition = new BeanDefinition(HelloService.class);
 		beanFactory.registerBeanDefinition("helloService", beanDefinition);
+
+		// 设置 bean 生成策略
+		beanFactory.setInstantiationStrategy(new CglibSubclassingInstantiationStrategy());
 
 		HelloService helloService = (HelloService) beanFactory.getBean("helloService");
 		helloService.sayHello();
