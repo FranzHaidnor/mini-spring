@@ -8,13 +8,15 @@ import java.util.Map;
 
 /**
  * 默认可列表 Bean 工厂
- * @author derekyi
- * @date 2020/11/22
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
 
+	/**
+	 * 存放 bean 定义的对象的容器
+	 */
 	private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
+	// implement BeanDefinitionRegistry --------------------------------------------------------------------------------
 	@Override
 	public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) {
 		beanDefinitionMap.put(beanName, beanDefinition);

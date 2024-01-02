@@ -5,8 +5,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 
 /**
- * @author derekyi
- * @date 2020/11/22
+ * 抽象的 bean 工厂
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
 

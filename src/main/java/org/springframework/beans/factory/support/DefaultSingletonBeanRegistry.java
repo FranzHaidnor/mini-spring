@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author derekyi
- * @date 2020/11/22
+ * 默认的单例bean 注册器
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
+	// 存放单例bean 实例的容器
 	private Map<String, Object> singletonObjects = new HashMap<>();
 
 	@Override

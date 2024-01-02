@@ -4,17 +4,13 @@ import org.springframework.beans.BeansException;
 
 /**
  * bean容器
- *
- * @author derekyi
- * @date 2020/11/22
  */
 public interface BeanFactory {
 
 	/**
-	 * 获取bean
+	 * 从容器中获取bean
 	 *
-	 * @param name
-	 * @return
+	 * @param name bean 的名称
 	 * @throws BeansException bean不存在时
 	 */
 	Object getBean(String name) throws BeansException;
