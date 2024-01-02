@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 默认的单例bean 注册器
  * <p>
- * 管理了存放 单例对象 Bean 的容器
+ * 管理单例Bean的容器
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 

@@ -14,7 +14,7 @@ import java.util.Map;
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
 
     /**
-     * 存放 bean 定义的对象的容器
+     * 管理 BeanDefinition 容器
      */
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 

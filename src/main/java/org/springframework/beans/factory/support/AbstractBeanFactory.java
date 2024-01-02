@@ -12,7 +12,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 	// 这个方法来自于接口 BeanFactory
 	@Override
 	public Object getBean(String name) throws BeansException {
-		Object bean = getSingleton(name);
+		Object bean =  getSingleton(name);
 		if (bean != null) {
 			return bean;
 		}
