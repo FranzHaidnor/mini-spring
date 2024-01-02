@@ -9,14 +9,16 @@ import org.springframework.beans.factory.config.BeanDefinition;
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
 
+	// 这个方法来自于接口 BeanFactory
 	@Override
 	public Object getBean(String name) throws BeansException {
 		Object bean = getSingleton(name);
 		if (bean != null) {
 			return bean;
 		}
-
+		// 抽象方法 获取bean定义
 		BeanDefinition beanDefinition = getBeanDefinition(name);
+		// 抽象方法 使用 Bean 定义创建一个 Bean
 		return createBean(name, beanDefinition);
 	}
 

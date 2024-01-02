@@ -8,27 +8,30 @@ import java.util.Map;
 
 /**
  * 默认可列表 Bean 工厂
+ * <p>
+ * 管理了存放 BeanDefinition 的容器
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
 
-	/**
-	 * 存放 bean 定义的对象的容器
-	 */
-	private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
+    /**
+     * 存放 bean 定义的对象的容器
+     */
+    private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
-	// implement BeanDefinitionRegistry --------------------------------------------------------------------------------
-	@Override
-	public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) {
-		beanDefinitionMap.put(beanName, beanDefinition);
-	}
+    // implement BeanDefinitionRegistry --------------------------------------------------------------------------------
+    @Override
+    public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) {
+        beanDefinitionMap.put(beanName, beanDefinition);
+    }
 
-	@Override
-	protected BeanDefinition getBeanDefinition(String beanName) throws BeansException {
-		BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
-		if (beanDefinition == null) {
-			throw new BeansException("No bean named '" + beanName + "' is defined");
-		}
+    // 实现 AbstractBeanFactory 的抽象方法
+    @Override
+    protected BeanDefinition getBeanDefinition(String beanName) throws BeansException {
+        BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
+        if (beanDefinition == null) {
+            throw new BeansException("No bean named '" + beanName + "' is defined");
+        }
 
-		return beanDefinition;
-	}
+        return beanDefinition;
+    }
 }
